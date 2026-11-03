@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIVAM SINGHANIA | Official Telegram Channel</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #050608;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 65%),
+        radial-gradient(circle at 80% 80%, rgba(26, 42, 66, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 20% 90%, rgba(175, 120, 20, 0.12) 0%, transparent 60%);
+      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 14px;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.22) 0%, rgba(0, 0, 0, 0) 70%);
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+      pointer-events: none;
+      filter: blur(40px);
+      animation: pulseGlow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: translateX(-50%) scale(0.9); opacity: 0.6; }
+      100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+    }
+
+    /* Main Card */
+    .vip-card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      background: rgba(14, 17, 24, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 28px;
+      padding: 34px 22px 28px;
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.85),
+        0 0 30px rgba(212, 175, 55, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+      text-align: center;
+    }
+
+    /* Top Live Badge */
+    .top-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #e5c158;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #00ff66;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00ff66;
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.75); }
+    }
+
+    /* Profile DP */
+    .profile-wrap {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 18px;
+    }
+
+    .profile-glow {
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #d4af37, #f3e5ab, #aa7c11, #ffd700);
+      background-size: 300% 300%;
+      animation: rotateGrad 5s linear infinite;
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+    }
+
+    @keyframes rotateGrad {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .profile-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3.5px solid #0e1118;
+      z-index: 1;
+    }
+
+    .verified-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: #0088cc;
+      color: #ffffff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      border: 2.5px solid #0e1118;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(0, 136, 204, 0.6);
+    }
+
+    /* Title & Meta */
+    .profile-name {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #ffffff 40%, #e2c068 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 4px;
+    }
+
+    .profile-tagline {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #d4af37;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    /* Live Stats Row */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 26px;
+      padding: 0 8px;
+    }
+
+    .stat-pill {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 8px 6px;
+    }
+
+    .stat-val {
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .stat-lbl {
+      font-size: 9px;
+      color: #8b92a2;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    /* Centered Premium Join Button */
+    .btn-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .btn-telegram {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #f7d568 0%, #d4af37 40%, #a47612 100%);
+      color: #0b0c10;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 16px;
+      box-shadow:
+        0 10px 25px rgba(212, 175, 55, 0.45),
+        0 2px 6px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+      transition: all 0.25s ease;
+      overflow: hidden;
+      border: 1px solid rgba(255, 240, 180, 0.7);
+    }
+
+    .btn-telegram:active {
+      transform: scale(0.97);
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-telegram i {
+      font-size: 20px;
+    }
+
+    /* Live Shimmer Flare on Button */
+    .btn-telegram::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.75) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(25deg);
+      animation: liveShine 2.8s infinite;
+    }
+
+    @keyframes liveShine {
+      0% { left: -60%; }
+      35% { left: 140%; }
+      100% { left: 140%; }
+    }
+
+    /* Bottom Timer Section */
+    .timer-section {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px dashed rgba(212, 175, 55, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .timer-circle-wrap {
+      position: relative;
+      width: 58px;
+      height: 58px;
+    }
+
+    .timer-svg {
+      transform: rotate(-90deg);
+      width: 100%;
+      height: 100%;
+    }
+
+    .timer-bg {
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 4;
+      fill: none;
+    }
+
+    .timer-progress {
+      stroke: #d4af37;
+      stroke-width: 4;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 163.36; /* 2 * PI * 26 */
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 1s linear;
+      filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.7));
+    }
+
+    .timer-number {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffd700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer-text {
+      font-size: 11px;
+      color: #9aa2b5;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .timer-text strong {
+      color: #ffd700;
+      font-weight: 700;
+    }
+
+    .security-note {
+      font-size: 10px;
+      color: #636b7c;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <main class="vip-card">
+
+    <!-- Top Live Tag -->
+    <div class="top-badge">
+      <span class="live-dot"></span>
+      VIP VERIFIED ACCREDITED
+    </div>
+
+    <!-- Guy with Supercar Luxury DP -->
+    <div class="profile-wrap">
+      <div class="profile-glow"></div>
+      <img
+        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=700&q=80"
+        alt="Shivam Singhania"
+        class="profile-img"
+      />
+      <div class="verified-badge">
+        <i class="fa-solid fa-check"></i>
+      </div>
+    </div>
+
+    <!-- Name & Status -->
+    <h1 class="profile-name">SHIVAM SINGHANIA</h1>
+    <p class="profile-tagline">Elite Market & Sports Analyst</p>
+
+    <!-- Proof / Stats Row -->
+    <div class="stats-row">
+      <div class="stat-pill">
+        <div class="stat-val">100%</div>
+        <div class="stat-lbl">Free Access</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-val">99.4%</div>
+        <div class="stat-lbl">Accuracy</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-val">85K+</div>
+        <div class="stat-lbl">VIP Members</div>
+      </div>
+    </div>
+
+    <!-- Centered Premium Join Button -->
+    <div class="btn-container">
+      <a href="https://t.me/+O8PKYowaMLM3NjQ1" class="btn-telegram" id="joinBtn">
+        <i class="fa-brands fa-telegram"></i>
+        <span>JOIN TELEGRAM CHANNEL NOW</span>
+      </a>
+    </div>
+
+    <!-- Timer Under The Button -->
+    <section class="timer-section">
+      <div class="timer-circle-wrap">
+        <svg class="timer-svg" viewBox="0 0 60 60">
+          <circle class="timer-bg" cx="30" cy="30" r="26"></circle>
+          <circle class="timer-progress" id="timerProgress" cx="30" cy="30" r="26"></circle>
+        </svg>
+        <div class="timer-number" id="countdownSec">15</div>
+      </div>
+      <div class="timer-text">
+        Auto-redirecting in <strong><span id="textSec">15</span> seconds</strong>...
+      </div>
+      <div class="security-note">
+        <i class="fa-solid fa-lock"></i> End-to-End Encrypted Telegram Link
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Configuration
+    const TELEGRAM_URL = "https://t.me/+O8PKYowaMLM3NjQ1";
+    let timeLeft = 15;
+    const totalTime = 15;
+
+    const countDisplay = document.getElementById("countdownSec");
+    const textSec = document.getElementById("textSec");
+    const progressCircle = document.getElementById("timerProgress");
+    const circumference = 2 * Math.PI * 26; // ~163.36
+
+    // Countdown Interval
+    const countdownInterval = setInterval(() => {
+      timeLeft--;
+
+      if (timeLeft >= 0) {
+        countDisplay.textContent = timeLeft;
+        textSec.textContent = timeLeft;
+
+        // Animate SVG stroke offset
+        const offset = circumference - (timeLeft / totalTime) * circumference;
+        progressCircle.style.strokeDashoffset = offset;
+      }
+
+      if (timeLeft <= 0) {
+        clearInterval(countdownInterval);
+        // Automatic Redirection
+        window.location.href = TELEGRAM_URL;
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
